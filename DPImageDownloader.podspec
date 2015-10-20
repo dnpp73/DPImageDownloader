@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name                  = 'DPImageDownloader'
   s.version               = '2.0.0'
-  s.summary               = 'iOS 6-9, OSX 10.8-10.11 Compatible Lightweight Image Downloader. including (disk|memory) cache function.'
+  s.summary               = 'iOS 6-9, OSX 10.8-10.11 Compatible Lightweight Image Downloader. including disk, memory cache function.'
   s.authors               = {
     'Yusuke SUGAMIYA' => 'yusuke.dnpp@gmail.com',
     'Yusuke Ito'      => 'novi.mad@gmail.com'
