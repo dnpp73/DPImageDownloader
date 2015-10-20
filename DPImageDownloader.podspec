@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = 'DPImageDownloader'
-  s.version               = '1.0.0'
+  s.version               = '2.0.0'
   s.summary               = 'iOS 6-9, OSX 10.8-10.11 Compatible Lightweight Image Downloader. including (disk|memory) cache function.'
   s.authors               = {
     'Yusuke SUGAMIYA' => 'yusuke.dnpp@gmail.com',
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.requires_arc          = true
 
   s.dependency 'DPReachability'
-  
+
   s.license = {
    :type => 'MIT',
    :text => <<-LICENSE
