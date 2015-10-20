@@ -32,14 +32,14 @@
     return cache;
 }
 
-+ (instancetype)cacheFromStorageWithKey:(NSString*)key usingFileManager:(NSFileManager*)fm;
++ (instancetype)cacheFromStorageWithKey:(NSString*)key;
 {
     NSData* data = [NSData dataWithContentsOfFile:[[self cacheDirectoryPath] stringByAppendingPathComponent:key]];
     DPImageDownloaderCache* cache = [self cacheWithData:data key:key];
     if (!cache) {
         return nil;
     }
-    cache.createdAt = [[fm attributesOfItemAtPath:[[self cacheDirectoryPath] stringByAppendingPathComponent:key] error:nil] fileCreationDate].timeIntervalSince1970;
+    cache.createdAt = [[[NSFileManager defaultManager] attributesOfItemAtPath:[[self cacheDirectoryPath] stringByAppendingPathComponent:key] error:nil] fileCreationDate].timeIntervalSince1970;
     return cache;
 }
 
@@ -63,7 +63,7 @@
     }
 }
 
-- (void)save
+- (void)saveFile
 {
     NSString* path = [[self class] cacheDirectoryPath];
     NSFileManager* fm = [NSFileManager defaultManager];
@@ -80,9 +80,9 @@
     [_data writeToFile:[path stringByAppendingPathComponent:_key] atomically:NO];
 }
 
-- (void)deleteUsingFileManager:(NSFileManager*)fm
+- (void)deleteFile
 {
-    [fm removeItemAtPath:[[[self class] cacheDirectoryPath] stringByAppendingPathComponent:_key] error:nil];
+    [[NSFileManager defaultManager] removeItemAtPath:[[[self class] cacheDirectoryPath] stringByAppendingPathComponent:_key] error:nil];
 }
 
 + (NSString*)cacheDirectoryPath
