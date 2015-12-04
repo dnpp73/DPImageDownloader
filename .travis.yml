@@ -9,10 +9,10 @@ cache:
 before_install:
   - gem install cocoapods xcpretty --no-ri --no-rdoc
   - set -o pipefail
-  - xcodebuild clean -project DPImageDownloader.xcodeproj -target DPImageDownloader-iOS -configuration Release -sdk iphonesimulator | xcpretty -c
-  - xcodebuild clean -project DPImageDownloader.xcodeproj -target DPImageDownloader-OSX -configuration Release -sdk macosx          | xcpretty -c
+  - xcodebuild clean -project DPImageDownloader.xcodeproj -scheme DPImageDownloader-iOS -sdk iphonesimulator | xcpretty -c
+  - xcodebuild clean -project DPImageDownloader.xcodeproj -scheme DPImageDownloader-OSX -sdk macosx | xcpretty -c
 
 script:
   - pod lib lint
-  - xcodebuild -project DPImageDownloader.xcodeproj -target DPImageDownloader-iOS -configuration Release -sdk iphonesimulator | xcpretty -c
-  - xcodebuild -project DPImageDownloader.xcodeproj -target DPImageDownloader-OSX -configuration Release -sdk macosx          | xcpretty -c
+  - xcodebuild -project DPImageDownloader.xcodeproj -scheme DPImageDownloader-iOS -sdk iphonesimulator | xcpretty -c
+  - xcodebuild -project DPImageDownloader.xcodeproj -scheme DPImageDownloader-OSX -sdk macosx | xcpretty -c

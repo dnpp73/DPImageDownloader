@@ -18,8 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		194980671C1208B500E8470E /* DPImageDownloader_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DPImageDownloader_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		194980821C1208DC00E8470E /* DPImageDownloader_OSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DPImageDownloader_OSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		194980671C1208B500E8470E /* DPImageDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DPImageDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		194980821C1208DC00E8470E /* DPImageDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DPImageDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1949808C1C1209C800E8470E /* DPImageDownloaderCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPImageDownloaderCache.h; sourceTree = "<group>"; };
 		1949808D1C1209C800E8470E /* DPImageDownloaderCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPImageDownloaderCache.m; sourceTree = "<group>"; };
 		1949808E1C1209C800E8470E /* DPImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPImageDownloader.h; sourceTree = "<group>"; };
@@ -58,8 +58,8 @@
 		194980681C1208B500E8470E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				194980671C1208B500E8470E /* DPImageDownloader_iOS.framework */,
-				194980821C1208DC00E8470E /* DPImageDownloader_OSX.framework */,
+				194980671C1208B500E8470E /* DPImageDownloader.framework */,
+				194980821C1208DC00E8470E /* DPImageDownloader.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,7 +131,7 @@
 			);
 			name = "DPImageDownloader-iOS";
 			productName = "DPImageDownloader-iOS";
-			productReference = 194980671C1208B500E8470E /* DPImageDownloader_iOS.framework */;
+			productReference = 194980671C1208B500E8470E /* DPImageDownloader.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		194980811C1208DC00E8470E /* DPImageDownloader-OSX */ = {
@@ -149,7 +149,7 @@
 			);
 			name = "DPImageDownloader-OSX";
 			productName = "DPImageDownloader-OSX";
-			productReference = 194980821C1208DC00E8470E /* DPImageDownloader_OSX.framework */;
+			productReference = 194980821C1208DC00E8470E /* DPImageDownloader.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -233,7 +233,7 @@
 				FRAMEWORK_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(PROJECT_NAME:c99extidentifier)";
 			};
 			name = Debug;
 		};
@@ -243,7 +243,7 @@
 				FRAMEWORK_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(PROJECT_NAME:c99extidentifier)";
 			};
 			name = Release;
 		};
@@ -291,7 +291,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.dnpp.DPImageDownloader-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = org.dnpp.DPImageDownloader;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -338,7 +338,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.dnpp.DPImageDownloader-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = org.dnpp.DPImageDownloader;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -394,7 +394,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.dnpp.DPImageDownloader-OSX";
+				PRODUCT_BUNDLE_IDENTIFIER = org.dnpp.DPImageDownloader;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -442,7 +442,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.dnpp.DPImageDownloader-OSX";
+				PRODUCT_BUNDLE_IDENTIFIER = org.dnpp.DPImageDownloader;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -469,6 +469,7 @@
 				1949806E1C1208B500E8470E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		194980871C1208DC00E8470E /* Build configuration list for PBXNativeTarget "DPImageDownloader-OSX" */ = {
 			isa = XCConfigurationList;
@@ -477,6 +478,7 @@
 				194980891C1208DC00E8470E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
