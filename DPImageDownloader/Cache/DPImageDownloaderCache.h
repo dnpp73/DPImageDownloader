@@ -1,4 +1,4 @@
-#import "DPImageType.h"
+#import "DPImageDownloader.h"
 
 
 @interface DPImageDownloaderCache : NSObject

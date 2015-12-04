@@ -2,7 +2,6 @@
 #import  "DPImageDownloaderCache.h"
 #import  <CommonCrypto/CommonDigest.h>
 #include <time.h>
-#import  "DPReachability.h"
 
 
 @interface DPImageDownloader ()
@@ -54,13 +53,12 @@
                        lifeTime:(NSUInteger)lifeTime
                      completion:(DPImageDownloaderCompleteBlock)completion
 {
-    return [self getImageWithURL:url useOnMemoryCache:useOnMemoryCache lifeTime:lifeTime feedbackNetworkActivityIndicator:YES completionQueue:dispatch_get_main_queue() completion:completion];
+    return [self getImageWithURL:url useOnMemoryCache:useOnMemoryCache lifeTime:lifeTime completionQueue:dispatch_get_main_queue() completion:completion];
 }
 
 -  (DPImageType*)getImageWithURL:(NSString*)url
                 useOnMemoryCache:(BOOL)useOnMemoryCache
                         lifeTime:(NSUInteger)lifeTime
-feedbackNetworkActivityIndicator:(BOOL)feedbackNetworkActivityIndicator
                  completionQueue:(dispatch_queue_t)queue
                       completion:(DPImageDownloaderCompleteBlock)completion
 {
@@ -90,14 +88,7 @@ feedbackNetworkActivityIndicator:(BOOL)feedbackNetworkActivityIndicator
         
         NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30];
         
-        if (feedbackNetworkActivityIndicator) {
-            [DPReachability beginNetworkConnection];
-        }
-        
         void (^requestCompletion)(NSData*, NSURLResponse*, NSError*) = ^(NSData* data, NSURLResponse* urlResponse, NSError* connectionError){
-            if (feedbackNetworkActivityIndicator) {
-                [DPReachability endNetworkConnection];
-            }
             if (!data || connectionError) {
                 [self execCompletion:completion queue:queue image:nil];
                 return;

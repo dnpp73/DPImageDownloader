@@ -1,4 +1,13 @@
-#import "DPImageType.h"
+#import <Foundation/Foundation.h>
+
+
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
+#import <UIKit/UIKit.h>
+#define DPImageType UIImage
+#elif TARGET_OS_MAC
+#import <Cocoa/Cocoa.h>
+#define DPImageType NSImage
+#endif
 
 
 typedef void(^DPImageDownloaderCompleteBlock)(DPImageType* image); // nil is failed. UIImage or NSImage
@@ -16,7 +25,6 @@ typedef void(^DPImageDownloaderCompleteBlock)(DPImageType* image); // nil is fai
 -  (DPImageType*)getImageWithURL:(NSString*)url
                 useOnMemoryCache:(BOOL)useOnMemoryCache
                         lifeTime:(NSUInteger)lifeTime
-feedbackNetworkActivityIndicator:(BOOL)feedbackNetworkActivityIndicator
                  completionQueue:(dispatch_queue_t)queue
                       completion:(DPImageDownloaderCompleteBlock)completion;
 

@@ -5,9 +5,10 @@ DPImageDownloader
 [![Pod Version](http://img.shields.io/cocoapods/v/DPImageDownloader.svg?style=flat-square)](http://cocoadocs.org/docsets/DPImageDownloader/)
 [![Pod Platform](http://img.shields.io/cocoapods/p/DPImageDownloader.svg?style=flat-square)](http://cocoadocs.org/docsets/DPImageDownloader/)
 [![Pod License](http://img.shields.io/cocoapods/l/DPImageDownloader.svg?style=flat-square)](http://opensource.org/licenses/MIT)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat-square)](https://github.com/Carthage/Carthage)
 
 ### Dependency
-* [`DPReachabillity`](https://github.com/dnpp73/DPReachability)
+* None
 
 ### Require Framework
 * None

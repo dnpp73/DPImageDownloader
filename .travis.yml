@@ -1,16 +1,18 @@
 language: objective-c
-
-osx_image: xcode7
+osx_image: xcode7.1
+xcode_project: DPImageDownloader.xcodeproj
 
 cache:
   directories:
     - $HOME/.cocoapods
 
 before_install:
-  - gem install cocoapods --no-ri --no-rdoc
-
-before_script:
-  - pod setup > /dev/null 2>&1
+  - gem install cocoapods xcpretty --no-ri --no-rdoc
+  - set -o pipefail
+  - xcodebuild clean -project DPImageDownloader.xcodeproj -target DPImageDownloader-iOS -configuration Release -sdk iphonesimulator | xcpretty -c
+  - xcodebuild clean -project DPImageDownloader.xcodeproj -target DPImageDownloader-OSX -configuration Release -sdk macosx          | xcpretty -c
 
 script:
-  - pod lib lint --sources='https://github.com/CocoaPods/Specs'
+  - pod lib lint
+  - xcodebuild -project DPImageDownloader.xcodeproj -target DPImageDownloader-iOS -configuration Release -sdk iphonesimulator | xcpretty -c
+  - xcodebuild -project DPImageDownloader.xcodeproj -target DPImageDownloader-OSX -configuration Release -sdk macosx          | xcpretty -c
