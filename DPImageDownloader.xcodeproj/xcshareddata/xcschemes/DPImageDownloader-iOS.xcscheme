@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "194980661C1208B500E8470E"
-               BuildableName = "DPImageDownloader_iOS.framework"
+               BuildableName = "DPImageDownloader.framework"
                BlueprintName = "DPImageDownloader-iOS"
                ReferencedContainer = "container:DPImageDownloader.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "194980661C1208B500E8470E"
-            BuildableName = "DPImageDownloader_iOS.framework"
+            BuildableName = "DPImageDownloader.framework"
             BlueprintName = "DPImageDownloader-iOS"
             ReferencedContainer = "container:DPImageDownloader.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "194980661C1208B500E8470E"
-            BuildableName = "DPImageDownloader_iOS.framework"
+            BuildableName = "DPImageDownloader.framework"
             BlueprintName = "DPImageDownloader-iOS"
             ReferencedContainer = "container:DPImageDownloader.xcodeproj">
          </BuildableReference>
